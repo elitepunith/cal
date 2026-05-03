@@ -3,68 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Time Capsule</title>
+    <title>Terminal Portfolio</title>
+    <!-- This line links your CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="dashboard-container">
-        <header>
-            <h1>SYSTEM_STATUS: <span class="accent-text">ACTIVE</span></h1>
-            <p>TIME CAPSULE // LOG_ENTRY_2026</p>
-        </header>
+    <div class="terminal-window">
+        <!-- Window Controls (Mac Style) -->
+        <div class="top-bar">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+        </div>
 
-        <main class="grid-layout">
-            <!-- Card 1 -->
-            <div class="interest-card">
-                <div class="card-glow"></div>
-                <div class="card-content">
-                    <span class="category">01 // DEV</span>
-                    <h3>Web Engineering</h3>
-                    <p>Building interactive interfaces with clean, modern logic.</p>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="interest-card">
-                <div class="card-glow"></div>
-                <div class="card-content">
-                    <span class="category">02 // MEDIA</span>
-                    <h3>Anime Chronicles</h3>
-                    <p>Exploring complex narratives and world-building through animation.</p>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="interest-card">
-                <div class="card-glow"></div>
-                <div class="card-content">
-                    <span class="category">03 // SEC</span>
-                    <h3>Cybersecurity</h3>
-                    <p>Researching digital defense systems and hardware security.</p>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="interest-card">
-                <div class="card-glow"></div>
-                <div class="card-content">
-                    <span class="category">04 // PLAY</span>
-                    <h3>Retro Gaming</h3>
-                    <p>Mastering classic mechanics and building custom game clones.</p>
-                </div>
-            </div>
+        <!-- Terminal Content -->
+        <div class="terminal-body">
+            <p><span class="label">Last login: Sun May 03 20:26:38 on ttys001</span></p>
             
-            <!-- Card 5 -->
-            <div class="interest-card">
-                <div class="card-glow"></div>
-                <div class="card-content">
-                    <span class="category">05 // COMMUNITY</span>
-                    <h3>Hack Club</h3>
-                    <p>Collaborating on open-source hardware and software challenges.</p>
-                </div>
-            </div>
-        </main>
+            <p><span class="command">guest@hackclub:~$</span> cat welcome.txt</p>
+            <p>System initialized. Welcome to the project terminal.</p>
+            
+            <br>
+            
+            <p><span class="command">guest@hackclub:~$</span> ls ./projects</p>
+            <p>
+                * <a href="#">Neural-Network-Visualizer</a><br>
+                * <a href="#">Hack-Club-Game-Jam</a><br>
+                * <a href="#">Retro-Terminal-Template</a>
+            </p>
+
+            <br>
+
+            <p><span class="command">guest@hackclub:~$</span> ls ./socials</p>
+            <p>
+                GitHub: <a href="https://github.com">@yourusername</a><br>
+                Twitter: <a href="https://twitter.com">@yourhandle</a>
+            </p>
+
+            <br>
+
+            <p><span class="command">guest@hackclub:~$</span> <span class="cursor"></span></p>
+        </div>
     </div>
 
 </body>
