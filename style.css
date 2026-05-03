@@ -1,6 +1,6 @@
 /* Base Layout */
 body {
-    background-color: #604949;
+    background-color: #0d0d0d;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,6 +21,20 @@ body {
     display: flex;
     flex-direction: column;
     border: 1px solid #333;
+    position: relative; /* Needed for the scanlines overlay */
+}
+
+/* CRT Scanline Effect */
+.terminal-window::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
 }
 
 /* Top Navigation Bar */
@@ -29,6 +43,7 @@ body {
     padding: 10px;
     display: flex;
     gap: 8px;
+    z-index: 3;
 }
 
 .dot {
@@ -49,6 +64,7 @@ body {
     line-height: 1.6;
     overflow-y: auto;
     text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+    flex-grow: 1;
 }
 
 /* Text Highlights */
@@ -60,11 +76,48 @@ a {
     color: #00ff41;
     text-decoration: none;
     border-bottom: 1px dashed #00ff41;
+    position: relative;
+    z-index: 3;
 }
 
 a:hover {
     background-color: #00ff41;
     color: #1a1a1a;
+}
+
+/* Function Buttons */
+.quick-nav {
+    display: flex;
+    gap: 15px;
+    position: relative;
+    z-index: 3;
+}
+
+.btn {
+    background: transparent;
+    border: 1px solid #00ff41;
+    color: #00ff41;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    background: #00ff41;
+    color: #1a1a1a;
+}
+
+/* Bottom Taskbar */
+.status-bar {
+    background-color: #333;
+    color: #aaa;
+    padding: 5px 15px;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #444;
+    z-index: 3;
 }
 
 /* Blinking Cursor Animation */
@@ -87,6 +140,6 @@ a:hover {
     width: 6px;
 }
 .terminal-body::-webkit-scrollbar-thumb {
-    background: #9e9292;
+    background: #333;
     border-radius: 10px;
 }
