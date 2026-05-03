@@ -1,36 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cal</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Time Capsule</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="calculator-grid">
-    <div class="output">
-      <div data-previous-operand class="previous-operand"></div>
-      <div data-current-operand class="current-operand"></div>
+
+    <div class="dashboard-container">
+        <header>
+            <h1>SYSTEM_STATUS: <span class="accent-text">ACTIVE</span></h1>
+            <p>TIME CAPSULE // LOG_ENTRY_2026</p>
+        </header>
+
+        <main class="grid-layout">
+            <!-- Card 1 -->
+            <div class="interest-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <span class="category">01 // DEV</span>
+                    <h3>Web Engineering</h3>
+                    <p>Building interactive interfaces with clean, modern logic.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="interest-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <span class="category">02 // MEDIA</span>
+                    <h3>Anime Chronicles</h3>
+                    <p>Exploring complex narratives and world-building through animation.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="interest-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <span class="category">03 // SEC</span>
+                    <h3>Cybersecurity</h3>
+                    <p>Researching digital defense systems and hardware security.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="interest-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <span class="category">04 // PLAY</span>
+                    <h3>Retro Gaming</h3>
+                    <p>Mastering classic mechanics and building custom game clones.</p>
+                </div>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="interest-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <span class="category">05 // COMMUNITY</span>
+                    <h3>Hack Club</h3>
+                    <p>Collaborating on open-source hardware and software challenges.</p>
+                </div>
+            </div>
+        </main>
     </div>
-    <button data-all-clear class="span-two action-btn">AC</button>
-    <button data-delete class="action-btn">DEL</button>
-    <button data-operation class="operator-btn">÷</button>
-    <button data-number>7</button>
-    <button data-number>8</button>
-    <button data-number>9</button>
-    <button data-operation class="operator-btn">*</button>
-    <button data-number>4</button>
-    <button data-number>5</button>
-    <button data-number>6</button>
-    <button data-operation class="operator-btn">-</button>
-    <button data-number>1</button>
-    <button data-number>2</button>
-    <button data-number>3</button>
-    <button data-operation class="operator-btn">+</button>
-    <button data-number class="bottom-left-radius">.</button>
-    <button data-number>0</button>
-    <button data-equals class="span-two equals-btn bottom-right-radius">=</button>
-  </div>
-  <script src="script.js"></script>
+
 </body>
 </html>
