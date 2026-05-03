@@ -3,65 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminal Portfolio</title>
-    <!-- This line links your CSS file -->
+    <title>DOGS</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="terminal-window">
-        <!-- Window Controls (Mac Style) -->
-        <div class="top-bar">
-            <div class="dot red"></div>
-            <div class="dot yellow"></div>
-            <div class="dot green"></div>
-        </div>
-
-        <!-- Terminal Content -->
-        <div class="terminal-body">
-            <p><span class="label">Last login: Sun May 03 20:26:38 on ttys001</span></p>
-            
-            <p><span class="command">guest@hackclub:~$</span> cat welcome.txt</p>
-            <p>System initialized. Welcome to the project terminal.</p>
-            
-            <br>
-            
-            <p><span class="command">guest@hackclub:~$</span> ls ./projects</p>
-            <p>
-                * <a href="#">Neural-Network-Visualizer</a><br>
-                * <a href="#">Hack-Club-Game-Jam</a><br>
-                * <a href="#">Retro-Terminal-Template</a>
-            </p>
-
-            <br>
-
-            <p><span class="command">guest@hackclub:~$</span> ls ./socials</p>
-            <p>
-                GitHub: <a href="https://github.com">@yourusername</a><br>
-                Twitter: <a href="https://twitter.com">@yourhandle</a>
-            </p>
-
-            <br>
-
-            <!-- Quick Nav Buttons -->
-            <div class="quick-nav">
-                <button class="btn">[F1] HELP</button>
-                <button class="btn">[F2] PROJECTS</button>
-                <button class="btn">[F3] CONTACT</button>
-            </div>
-
-            <br>
-
-            <p><span class="command">guest@hackclub:~$</span> <span class="cursor"></span></p>
-        </div>
-
-        <!-- Status Bar -->
-        <div class="status-bar">
-            <span>MODE: INSERT</span>
-            <span>CPU: 12%</span>
-            <span>RAM: 512MB</span>
-        </div>
+    <!-- NEW FEATURE 1: Announcement Banner -->
+    <div class="announcement-banner">
+        <p>🚨 Adopt, Don't Shop! Join our local rescue drive this weekend. <a href="#gallery">Learn More</a></p>
     </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">🐾 DOGS </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#care">Dog Care</a></li>
+            <li><a href="#faq">FAQs</a></li> <!-- Added FAQ to nav -->
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content glass-card">
+            <h1>Welcome to the Pack!</h1>
+            <p>Your ultimate destination for all things dog. Discover tips, adorable photos, and join a community that loves dogs as much as you do.</p>
+            <a href="#gallery" class="btn">Explore Now</a>
+        </div>
+    </header>
+
+    <!-- NEW FEATURE 2: Dog of the Month Spotlight -->
+    <section class="spotlight-section">
+        <div class="spotlight-container glass-card">
+            <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Corgi - Dog of the Month" class="spotlight-img">
+            <div class="spotlight-text">
+                <span class="badge">🌟 Dog of the Month</span>
+                <h2>Meet Barnaby!</h2>
+                <p>Barnaby is a 2-year-old Corgi with a knack for learning tricks and a love for peanut butter. He was recently adopted and is loving his new forever home!</p>
+                <a href="#gallery" class="btn">See More Dogs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <h2>Our Furry Friends</h2>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Beagle">
+                <div class="card-info">
+                    <h3>Curious Companions</h3>
+                    <p>Always ready for an adventure.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Golden Retriever">
+                <div class="card-info">
+                    <h3>Loyal Friends</h3>
+                    <p>A bond that lasts a lifetime.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Puppy">
+                <div class="card-info">
+                    <h3>Playful Pups</h3>
+                    <p>Endless energy and unconditional love.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dog Care Section -->
+    <section id="care" class="care-section">
+        <h2>Essential Dog Care</h2>
+        <div class="care-grid">
+            <div class="care-card glass-card">
+                <h3>🦴 Nutrition</h3>
+                <p>Provide a balanced diet tailored to your dog's age, size, and activity level to keep their coat shiny and energy high.</p>
+            </div>
+            <div class="care-card glass-card">
+                <h3>🎾 Exercise</h3>
+                <p>Daily walks and playtime keep your furry friend physically fit and mentally stimulated.</p>
+            </div>
+            <div class="care-card glass-card">
+                <h3>🩺 Health</h3>
+                <p>Regular vet check-ups, teeth cleaning, and vaccinations are crucial for a long, happy life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Happy Pawrents (Testimonials) Section -->
+    <section class="testimonials-section">
+        <h2>Happy Pawrents</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card glass-card">
+                <p>"This website helped me find the best nutrition plan for my golden retriever. Truly a lifesaver!"</p>
+                <h4>- Sarah & Max 🐶</h4>
+            </div>
+            <div class="testimonial-card glass-card">
+                <p>"Love the community here. The gallery always brightens my day. Highly recommend Paws & Play!"</p>
+                <h4>- James & Bella 🐩</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW FEATURE 3: Interactive FAQ Section -->
+    <section id="faq" class="faq-section">
+        <h2>Doggie FAQs</h2>
+        <div class="faq-container">
+            <details class="faq-item glass-card">
+                <summary>How often should I walk my dog?</summary>
+                <p>Most dogs benefit from 30 to 60 minutes of exercise per day, but it depends on their breed, age, and health. High-energy breeds may need much more!</p>
+            </details>
+            <details class="faq-item glass-card">
+                <summary>What human foods are toxic to dogs?</summary>
+                <p>Grapes, raisins, chocolate, onions, garlic, macadamia nuts, and foods containing the sweetener xylitol are highly toxic to dogs and should be strictly avoided.</p>
+            </details>
+            <details class="faq-item glass-card">
+                <summary>How do I start training my new puppy?</summary>
+                <p>Start with basic obedience commands like sit, stay, and come using positive reinforcement (treats and praise). Keep sessions short and fun!</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="glass-card newsletter-card">
+            <h2>Join Our Pack!</h2>
+            <p>Get the latest doggie news and care tips delivered right to your inbox.</p>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Enter your email address..." required>
+                <button type="submit" class="btn">Subscribe</button> 
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ for dogs everywhere.</p>
+    </footer>
+
+    <!-- Floating Back to Top Button -->
+    <a href="#home" class="back-to-top">⬆️</a>
 
 </body>
 </html>

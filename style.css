@@ -1,145 +1,456 @@
-/* Base Layout */
+/* --- Color Palette & Global Variables --- */
+:root {
+    --primary-color: #a8959a; /* Warm playful pink/orange */
+    --primary-hover: #a08c91;
+    --bg-color: #a19082; /* Soft peach/cream background */
+    --text-dark: #625156; /* Deep warm brown for readable text */
+    --text-light: #8c5b68;
+    --white: #6e5f5f;
+}
+
+/* --- Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Makes clicking nav links glide down the page */
+}
+
 body {
-    background-color: #0d0d0d;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 80vh;
+    background: url('https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    padding: 20px;
 }
 
-/* The Window Container */
-.terminal-window {
-    width: 85%;
-    max-width: 800px;
-    height: 500px;
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #333;
-    position: relative; /* Needed for the scanlines overlay */
+/* Glassmorphism Card Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 50px;
+    border-radius: 20px;
+    max-width: 600px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* CRT Scanline Effect */
-.terminal-window::before {
-    content: " ";
-    display: block;
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-    z-index: 2;
-    background-size: 100% 4px, 3px 100%;
-    pointer-events: none;
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
 }
 
-/* Top Navigation Bar */
-.top-bar {
-    background-color: #333;
-    padding: 10px;
-    display: flex;
-    gap: 8px;
-    z-index: 3;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.red { background-color: #ff5f56; }
-.yellow { background-color: #ffbd2e; }
-.green { background-color: #27c93f; }
-
-/* Inside the Terminal */
-.terminal-body {
-    padding: 25px;
-    color: #00ff41; /* Classic Matrix Green */
+.hero p {
     font-size: 1.1rem;
-    line-height: 1.6;
-    overflow-y: auto;
-    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
-    flex-grow: 1;
-}
-
-/* Text Highlights */
-.command { color: #ffffff; font-weight: bold; }
-.label { color: #666666; }
-
-/* Links */
-a {
-    color: #00ff41;
-    text-decoration: none;
-    border-bottom: 1px dashed #00ff41;
-    position: relative;
-    z-index: 3;
-}
-
-a:hover {
-    background-color: #00ff41;
-    color: #1a1a1a;
-}
-
-/* Function Buttons */
-.quick-nav {
-    display: flex;
-    gap: 15px;
-    position: relative;
-    z-index: 3;
+    color: var(--text-light);
+    margin-bottom: 30px;
 }
 
 .btn {
-    background: transparent;
-    border: 1px solid #00ff41;
-    color: #00ff41;
-    padding: 5px 10px;
-    cursor: pointer;
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
     font-family: inherit;
-    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 139, 167, 0.4);
 }
 
 .btn:hover {
-    background: #00ff41;
-    color: #1a1a1a;
+    background-color: var(--primary-hover);
+    transform: translateY(-3px); /* Smooth lift effect */
+    box-shadow: 0 6px 20px rgba(255, 139, 167, 0.6);
 }
 
-/* Bottom Taskbar */
-.status-bar {
-    background-color: #333;
-    color: #aaa;
-    padding: 5px 15px;
-    font-size: 0.75rem;
+/* --- Gallery Section --- */
+.gallery-section {
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.card-info h3 {
+    margin-bottom: 10px;
+}
+
+.card-info p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* --- Dog Care Section --- */
+.care-section {
+    padding: 80px 50px;
+    background-color: var(--white); 
+    text-align: center;
+}
+
+.care-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+}
+
+.care-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.care-card {
+    padding: 30px;
+    text-align: left;
+    background: var(--bg-color);
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.care-card:hover {
+    transform: translateY(-5px);
+}
+
+.care-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* --- Newsletter Section --- */
+.newsletter {
+    padding: 80px 20px;
     display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #444;
-    z-index: 3;
+    justify-content: center;
+    /* Fixed parallax background image */
+    background: url('https://images.unsplash.com/photo-1537151608804-ea2f1ea3bd5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
 }
 
-/* Blinking Cursor Animation */
-.cursor {
+.newsletter-card {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.newsletter-card h2 {
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.subscribe-form input {
+    padding: 12px 20px;
+    border: 2px solid var(--white);
+    border-radius: 30px;
+    outline: none;
+    flex: 1;
+    min-width: 250px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.subscribe-form input:focus {
+    border-color: var(--primary-color);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--text-dark);
+    color: var(--white);
+}
+
+/* --- Testimonials --- */
+.testimonials-section {
+    padding: 80px 50px;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+}
+
+.testimonial-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    max-width: 400px;
+    padding: 30px;
+    background: var(--white);
+    border: none;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.testimonial-card h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* --- Back to Top Button --- */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-5px);
+}
+
+/* =========================================
+   NEW FEATURE STYLES ADDED BELOW
+========================================= */
+
+/* --- NEW FEATURE 1: Announcement Banner --- */
+.announcement-banner {
+    background-color: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.announcement-banner a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.announcement-banner a:hover {
+    color: var(--primary-hover);
+}
+
+/* --- NEW FEATURE 2: Spotlight Section --- */
+.spotlight-section {
+    padding: 80px 50px;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+}
+
+.spotlight-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1000px;
+    padding: 0; /* Reset padding for side-by-side layout */
+    overflow: hidden;
+    background: var(--bg-color); /* Contrasting background */
+}
+
+.spotlight-img {
+    flex: 1;
+    min-width: 300px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.spotlight-text {
+    flex: 1;
+    padding: 40px;
+    min-width: 300px;
+}
+
+.badge {
     display: inline-block;
-    width: 10px;
-    height: 1.2rem;
-    background-color: #00ff41;
-    vertical-align: middle;
-    margin-left: 5px;
-    animation: blink 1s step-end infinite;
+    background-color: var(--white);
+    color: var(--primary-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
 }
 
-@keyframes blink {
-    50% { opacity: 0; }
+.spotlight-text h2 {
+    color: var(--text-dark);
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
-/* Custom Scrollbar Styling */
-.terminal-body::-webkit-scrollbar {
-    width: 6px;
+.spotlight-text p {
+    color: var(--text-light);
+    margin-bottom: 25px;
 }
-.terminal-body::-webkit-scrollbar-thumb {
-    background: #333;
+
+/* --- NEW FEATURE 3: FAQ Section --- */
+.faq-section {
+    padding: 80px 50px;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    background-color: var(--white);
+    margin-bottom: 15px;
+    padding: 20px;
     border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.faq-item summary {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    list-style: none; /* Removes default arrow in some browsers */
+    outline: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none; /* Removes default arrow in Safari/Chrome */
+}
+
+.faq-item p {
+    margin-top: 15px;
+    color: var(--text-light);
+    padding-top: 15px;
+    border-top: 1px solid rgba(0,0,0,0.05);
 }
